@@ -19,7 +19,7 @@ export default function XyflowDemo01() {
         >
           https://reactflow.dev/learn#creating-your-first-flow
         </a>
-        <p>
+        <div>
           <ul>
             <li>🎨 You must import the React Flow stylesheet.</li>
             <li>
@@ -27,7 +27,7 @@ export default function XyflowDemo01() {
               in an element with a width and height.
             </li>
           </ul>
-        </p>
+        </div>
       </div>
       <div className="fa-flex1 fa-relative">
         <div className="fa-absolute0">

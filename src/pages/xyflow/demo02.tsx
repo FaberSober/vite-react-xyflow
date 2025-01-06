@@ -32,11 +32,11 @@ export default function XyflowDemo02() {
         >
           Adding interactivity
         </a>
-        <p>
+        <div>
           <ul>
             <li>🎨 You must import the React Flow stylesheet.</li>
           </ul>
-        </p>
+        </div>
       </div>
       <div className="fa-flex1 fa-relative">
         <div className="fa-absolute0">
