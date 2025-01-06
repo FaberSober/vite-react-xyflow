@@ -1,0 +1,45 @@
+html,
+body,
+#root {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.foo {
+  background: dodgerblue;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.fa-full {
+  height: 100%;
+  width: 100%;
+}
+
+.fa-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-flex1 {
+  flex: 1;
+}
+
+.fa-relative {
+  position: relative;
+}
+
+.fa-absolute0 {
+  position: absolute;
+  inset: 0;
+}
+
+.fa-border-bottom {
+  border-bottom: 1px solid #eee;
+}
+
+.fa-p12 {
+  padding: 12px;
+}
