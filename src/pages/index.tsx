@@ -42,6 +42,7 @@ export default function App() {
             <Link to="/xyflow/demo01">xyflow/demo01</Link>
             <Link to="/xyflow/demo02">xyflow/demo02</Link>
             <Link to="/xyflow/demo03">xyflow/demo03</Link>
+            <Link to="/xyflow/demo04">xyflow/demo04</Link>
           </div>
         </div>
         <div style={{ marginTop: 12 }}>
