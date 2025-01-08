@@ -1,13 +1,5 @@
+import { Background, Controls, MiniMap, ReactFlow, addEdge, useEdgesState, useNodesState } from '@xyflow/react';
 import React, { useCallback } from 'react';
-import {
-  ReactFlow,
-  MiniMap,
-  Controls,
-  Background,
-  useNodesState,
-  useEdgesState,
-  addEdge,
-} from '@xyflow/react';
 
 import '@xyflow/react/dist/style.css';
 
@@ -21,18 +13,12 @@ export default function XyflowDemo02() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  const onConnect = useCallback(
-    (params: any) => setEdges((eds) => addEdge(params, eds)),
-    [setEdges]
-  );
+  const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
   return (
     <div className="fa-full fa-flex-column">
       <div className="fa-border-bottom fa-p12">
-        <a
-          href="https://reactflow.dev/learn#some-extra-goodies"
-          target="_blank"
-        >
+        <a href="https://reactflow.dev/learn#some-extra-goodies" target="_blank" rel="noreferrer">
           Some extra goodies
         </a>
         <div>

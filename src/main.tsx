@@ -18,5 +18,5 @@ const app = createRoot(document.getElementById('root')!);
 app.render(
   <Router>
     <App />
-  </Router>
+  </Router>,
 );

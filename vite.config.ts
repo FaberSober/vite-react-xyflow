@@ -1,13 +1,13 @@
-import { defineConfig, loadEnv } from 'vite'
+import path from 'node:path';
 import react from '@vitejs/plugin-react-swc';
-import Pages from 'vite-plugin-pages'
-import VitePluginImp from "vite-plugin-imp";
-import { visualizer } from "rollup-plugin-visualizer";
-import path from 'path';
+import { visualizer } from 'rollup-plugin-visualizer';
+import { defineConfig, loadEnv } from 'vite';
+import VitePluginImp from 'vite-plugin-imp';
+import Pages from 'vite-plugin-pages';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
-  console.log('loadEnv(mode, process.cwd())', loadEnv(mode, process.cwd()))
+  console.log('loadEnv(mode, process.cwd())', loadEnv(mode, process.cwd()));
   return {
     plugins: [
       react(),
@@ -34,21 +34,22 @@ export default defineConfig(({ command, mode }) => {
       //   ],
       // }),
       visualizer({
-        open:true,  //注意这里要设置为true，否则无效
-        gzipSize:true,
-        brotliSize:true
+        open: true, //注意这里要设置为true，否则无效
+        gzipSize: true,
+        brotliSize: true,
       }),
     ],
     //* css模块化
     css: {
-      modules: { // css模块化 文件以.module.[css|less|scss]结尾
+      modules: {
+        // css模块化 文件以.module.[css|less|scss]结尾
         // 回调必须返回 `local`，`global`，或者 `pure`
-        mode: (resourcePath) => {
+        mode: (resourcePath: string) => {
           // 形如xx.module.scss的样式，会使用local模块化编译。其他的则返回全局样式
           if (/\.module\.(css|scss)$/i.test(resourcePath)) {
-            return "local";
+            return 'local';
           }
-          return "global";
+          return 'global';
         },
         generateScopedName: '[name]__[local]___[hash:base64:5]',
         hashPrefix: 'prefix',
@@ -86,5 +87,5 @@ export default defineConfig(({ command, mode }) => {
     //     },
     //   },
     // },
-  }
-})
+  };
+});

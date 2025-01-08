@@ -1,5 +1,3 @@
 export default function All() {
-  return (
-    <p>...all route</p>
-  )
+  return <p>...all route</p>;
 }

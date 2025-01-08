@@ -1,5 +1,5 @@
-import { Outlet } from 'react-router-dom'
-import { ReactFlowProvider } from "@xyflow/react";
+import { ReactFlowProvider } from '@xyflow/react';
+import { Outlet } from 'react-router-dom';
 import '@xyflow/react/dist/style.css';
 
 export default function Blog() {
@@ -9,9 +9,9 @@ export default function Blog() {
 
       <div className="fa-flex1 fa-relative">
         <ReactFlowProvider>
-          <Outlet/>
+          <Outlet />
         </ReactFlowProvider>
       </div>
     </div>
-  )
+  );
 }

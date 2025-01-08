@@ -1,5 +1,5 @@
-import React from 'react';
 import { ReactFlow } from '@xyflow/react';
+import React from 'react';
 
 import '@xyflow/react/dist/style.css';
 
@@ -13,18 +13,14 @@ export default function XyflowDemo01() {
   return (
     <div className="fa-full fa-flex-column">
       <div className="fa-border-bottom fa-p12">
-        <a
-          href="https://reactflow.dev/learn#creating-your-first-flow"
-          target="_blank"
-        >
+        <a href="https://reactflow.dev/learn#creating-your-first-flow" target="_blank" rel="noreferrer">
           https://reactflow.dev/learn#creating-your-first-flow
         </a>
         <div>
           <ul>
             <li>🎨 You must import the React Flow stylesheet.</li>
             <li>
-              📐 The <code>&lt;ReactFlow /&gt;</code> component must be wrapped
-              in an element with a width and height.
+              📐 The <code>&lt;ReactFlow /&gt;</code> component must be wrapped in an element with a width and height.
             </li>
           </ul>
         </div>

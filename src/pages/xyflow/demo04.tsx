@@ -1,9 +1,16 @@
-import React, { KeyboardEventHandler, useCallback, useState } from "react";
-import { Background, BackgroundVariant, Controls, MiniMap, type NodeMouseHandler, ReactFlow, useReactFlow, } from '@xyflow/react';
+import {
+  Background,
+  BackgroundVariant,
+  Controls,
+  MiniMap,
+  type NodeMouseHandler,
+  ReactFlow,
+  useReactFlow,
+} from '@xyflow/react';
+import React, { type KeyboardEventHandler, useCallback, useState } from 'react';
 
+import { Slide, type SlideData } from './cube/Slide';
 import { slides, slidesToElements } from './cube/slides';
-import { Slide, type SlideData, } from './cube/Slide';
-
 
 const nodeTypes = {
   slide: Slide,
@@ -55,10 +62,7 @@ export default function XyflowDemo04() {
   return (
     <div className="fa-full fa-flex-column">
       <div className="fa-border-bottom fa-p12">
-        <a
-          href="https://reactflow.dev/learn/tutorials/slide-shows-with-react-flow"
-          target="_blank"
-        >
+        <a href="https://reactflow.dev/learn/tutorials/slide-shows-with-react-flow" target="_blank" rel="noreferrer">
           Create a slide show
         </a>
         <div>

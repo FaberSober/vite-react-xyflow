@@ -1,6 +1,6 @@
 import { type Node, type NodeProps, useReactFlow } from '@xyflow/react';
+import { useCallback } from 'react';
 import { Remark } from 'react-remark';
-import { useCallback } from "react";
 
 export type SlideNode = Node<SlideData, 'slide'>;
 
@@ -37,10 +37,26 @@ export function Slide({ data }: NodeProps<SlideNode>) {
     <article className="slide" style={style}>
       <Remark>{source}</Remark>
       <footer className="slide__controls nopan">
-        {left && <button onClick={(e) => moveToNextSlide(e, left)}>←</button>}
-        {up && <button onClick={(e) => moveToNextSlide(e, up)}>↑</button>}
-        {down && <button onClick={(e) => moveToNextSlide(e, down)}>↓</button>}
-        {right && <button onClick={(e) => moveToNextSlide(e, right)}>→</button>}
+        {left && (
+          <button type="button" onClick={(e) => moveToNextSlide(e, left)}>
+            ←
+          </button>
+        )}
+        {up && (
+          <button type="button" onClick={(e) => moveToNextSlide(e, up)}>
+            ↑
+          </button>
+        )}
+        {down && (
+          <button type="button" onClick={(e) => moveToNextSlide(e, down)}>
+            ↓
+          </button>
+        )}
+        {right && (
+          <button type="button" onClick={(e) => moveToNextSlide(e, right)}>
+            →
+          </button>
+        )}
       </footer>
     </article>
   );

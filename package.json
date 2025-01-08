@@ -5,30 +5,41 @@
     "ncu": "ncu -u --timeout 120000",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "biome lint --write src/",
+    "format": "biome format --write src/",
+    "check": "biome check --write src/"
   },
   "dependencies": {
-    "@ant-design/icons": "5.2.6",
+    "@ant-design/icons": "5.5.2",
     "@xyflow/react": "^12.3.6",
-    "antd": "5.10.1",
-    "dayjs": "1.11.10",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "antd": "5.23.0",
+    "dayjs": "1.11.13",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-remark": "^2.1.0",
-    "react-router-dom": "6.17.0"
+    "react-router-dom": "7.1.1"
   },
   "devDependencies": {
-    "@types/react": "18.2.30",
-    "@types/react-dom": "18.2.14",
-    "@types/react-router-config": "5.0.9",
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "22.10.5",
+    "@types/react": "19.0.3",
+    "@types/react-dom": "19.0.2",
+    "@types/react-router-config": "5.0.11",
     "@types/react-router-dom": "5.3.3",
-    "@vitejs/plugin-react-swc": "3.4.0",
-    "postcss": "8.4.31",
-    "rollup-plugin-visualizer": "5.9.2",
-    "sass": "1.69.4",
-    "typescript": "5.2.2",
-    "vite": "5.4.6",
+    "@vitejs/plugin-react-swc": "3.7.2",
+    "lefthook": "1.10.1",
+    "npm-check-updates": "17.1.13",
+    "postcss": "8.4.49",
+    "rollup-plugin-visualizer": "5.14.0",
+    "sass": "1.83.1",
+    "typescript": "5.7.2",
+    "vite": "6.0.7",
     "vite-plugin-imp": "2.4.0",
-    "vite-plugin-pages": "0.31.0"
+    "vite-plugin-pages": "0.32.4"
+  },
+  "engines": {
+    "node": ">=18.12.0",
+    "pnpm": ">=8.7.0"
   }
 }
