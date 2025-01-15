@@ -20,5 +20,5 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["./src", "typed-css.d.ts"]
+  "include": ["./src", "typed-css.d.ts", "shims.d.ts"]
 }
