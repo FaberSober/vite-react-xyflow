@@ -35,7 +35,6 @@
     "sass": "1.83.1",
     "typescript": "5.7.2",
     "vite": "6.0.7",
-    "vite-plugin-imp": "2.4.0",
     "vite-plugin-pages": "0.32.4"
   },
   "engines": {

@@ -2,8 +2,8 @@ import path from 'node:path';
 import react from '@vitejs/plugin-react-swc';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig, loadEnv } from 'vite';
-import VitePluginImp from 'vite-plugin-imp';
 import Pages from 'vite-plugin-pages';
+
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -14,25 +14,6 @@ export default defineConfig(({ command, mode }) => {
       Pages({
         exclude: ['**/components/*.tsx', '**/modal/*.tsx'],
       }),
-      // 使用按需导入后，antd动态样式会失效
-      // 按需导入
-      // https://github.com/onebay/vite-plugin-imp
-      // VitePluginImp({
-      //   libList: [
-      //     {
-      //       libName: 'lodash',
-      //       libDirectory: '',
-      //       camel2DashComponentName: false
-      //     },
-      //     {
-      //       libName: "antd",
-      //       // 不写 libList,默认是按需导入css,
-      //       // 想要使用 less, 需要改为加载 es 的 index.js,
-      //       // 里面加载了组件所需的一些 less 文件
-      //       style: (name) => `antd/es/${name}/style/index.js`,
-      //     },
-      //   ],
-      // }),
       visualizer({
         open: true, //注意这里要设置为true，否则无效
         gzipSize: true,
@@ -54,19 +35,6 @@ export default defineConfig(({ command, mode }) => {
         generateScopedName: '[name]__[local]___[hash:base64:5]',
         hashPrefix: 'prefix',
       },
-      // preprocessorOptions: {
-      //   less: {
-      //     // 支持内联 JavaScript
-      //     javascriptEnabled: true,
-      //     // 重写 less 变量，定制样式
-      //     modifyVars: {
-      //       // 修改antd主题色
-      //       'primary-color': '#1890FF',
-      //       'link-color': '#1890FF',
-      //       'border-radius-base': '2px',
-      //     },
-      //   },
-      // },
     },
     resolve: {
       alias: [
