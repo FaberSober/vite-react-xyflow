@@ -44,6 +44,10 @@ export default function App() {
             <Link to="/xyflow/demo03">xyflow/demo03</Link>
             <Link to="/xyflow/demo04">xyflow/demo04</Link>
           </div>
+
+          <div className="fa-flex-column">
+            <Link to="/unocss/demo01">unocss/demo01</Link>
+          </div>
         </div>
         <div style={{ marginTop: 12 }}>
           <Radio.Group
