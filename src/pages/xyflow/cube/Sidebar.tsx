@@ -1,10 +1,11 @@
-import React from 'react';
-import { useDnD } from './DnDContext';
+import { useContext } from 'react';
+import { DnDContext } from "@/pages/xyflow/layout/dnd/context/DnDContext";
+import type { DnDType } from "@/pages/xyflow/layout/dnd/context/DnDContext";
 
 export default () => {
-  const [_, setType] = useDnD();
+  const { setType } = useContext(DnDContext);
 
-  const onDragStart = (event: React.DragEvent<HTMLDivElement>, nodeType: string) => {
+  const onDragStart = (event: React.DragEvent<HTMLDivElement>, nodeType: DnDType) => {
     setType(nodeType);
     event.dataTransfer.effectAllowed = 'move';
   };

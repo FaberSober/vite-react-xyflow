@@ -1,10 +1,12 @@
+import { useCallback, useContext, useRef } from 'react';
 import { addEdge, Background, Controls, ReactFlow, useEdgesState, useNodesState, useReactFlow } from '@xyflow/react';
-import React, { useCallback, useRef } from 'react';
+import type { Node, Edge } from '@xyflow/react';
 
 import '@xyflow/react/dist/style.css';
 import Sidebar from '@/pages/xyflow/cube/Sidebar';
-import { DnDProvider, useDnD } from '@/pages/xyflow/cube/DnDContext';
 import './cube/demo05.css'
+import DndLayout from "@/pages/xyflow/layout/dnd/DndLayout";
+import { DnDContext } from "@/pages/xyflow/layout/dnd/context/DnDContext";
 
 const initialNodes = [
   {
@@ -20,23 +22,25 @@ const getId = () => `dndnode_${id++}`;
 
 function XyflowDemo05Main() {
   const reactFlowWrapper = useRef(null);
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState<Node>(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
   const { screenToFlowPosition } = useReactFlow();
-  const [type] = useDnD();
+  const { type } = useContext(DnDContext);
 
   const onConnect = useCallback(
-    (params) => setEdges((eds) => addEdge(params, eds)),
+    (params: Edge) => {
+      setEdges((eds: Edge[]) => addEdge(params, eds))
+    },
     [],
   );
 
-  const onDragOver = useCallback((event) => {
+  const onDragOver = useCallback((event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     event.dataTransfer.dropEffect = 'move';
   }, []);
 
   const onDrop = useCallback(
-    (event) => {
+    (event: React.DragEvent<HTMLDivElement>) => {
       event.preventDefault();
 
       // check if the dropped element is valid
@@ -107,8 +111,8 @@ function XyflowDemo05Main() {
 
 export default function XyflowDemo05() {
   return (
-    <DnDProvider>
+    <DndLayout>
       <XyflowDemo05Main />
-    </DnDProvider>
+    </DndLayout>
   )
 }
