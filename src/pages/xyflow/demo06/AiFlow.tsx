@@ -28,7 +28,7 @@ const initialNodes = [
     id: '2',
     type: 'ai-chat-node',
     data: { label: 'AI 对话' },
-    position: { x: 300, y: 0 },
+    position: { x: 350, y: 0 },
   },
 ];
 

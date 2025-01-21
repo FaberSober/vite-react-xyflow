@@ -22,7 +22,7 @@ export default function NodeContainer({ title, icon, color, selected, className,
   const [open, setOpen] = useState(true);
 
   return (
-    <div className={clsx('fa-node-card', 'p-12px', selected && 'fa-node-card-sel')} style={{ minWidth: 245, ...style }}>
+    <div className={clsx('fa-node-card', 'p-12px', selected && 'fa-node-card-sel')} style={{ minWidth: 280, ...style }}>
       <div className="fa-flex-row fa-flex-row-center">
         {icon && (
           <div className="fa-flex-row fa-flex-center fa-radius fa-mr4" style={{ background: color || '#F00' }}>
