@@ -58,9 +58,7 @@ const slide04 = {
   },
 };
 
-export const slides = Object.fromEntries(
-  [slide01, slide02, slide03, slide04].map(({ id, data }) => [id, data]),
-) as Record<string, SlideData>;
+export const slides = Object.fromEntries([slide01, slide02, slide03, slide04].map(({ id, data }) => [id, data])) as Record<string, SlideData>;
 
 export const slidesToElements = (initial: string, slides: Record<string, SlideData>) => {
   const stack = [{ id: initial, position: { x: 0, y: 0 } }];

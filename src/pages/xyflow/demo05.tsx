@@ -4,9 +4,9 @@ import type { Node, Edge } from '@xyflow/react';
 
 import '@xyflow/react/dist/style.css';
 import Sidebar from '@/pages/xyflow/cube/Sidebar';
-import './cube/demo05.css'
-import DndLayout from "@/pages/xyflow/layout/dnd/DndLayout";
-import { DnDContext } from "@/pages/xyflow/layout/dnd/context/DnDContext";
+import './cube/demo05.css';
+import DndLayout from '@/pages/xyflow/layout/dnd/DndLayout';
+import { DnDContext } from '@/pages/xyflow/layout/dnd/context/DnDContext';
 
 const initialNodes = [
   {
@@ -27,12 +27,9 @@ function XyflowDemo05Main() {
   const { screenToFlowPosition } = useReactFlow();
   const { type } = useContext(DnDContext);
 
-  const onConnect = useCallback(
-    (params: Edge) => {
-      setEdges((eds: Edge[]) => addEdge(params, eds))
-    },
-    [],
-  );
+  const onConnect = useCallback((params: Edge) => {
+    setEdges((eds: Edge[]) => addEdge(params, eds));
+  }, []);
 
   const onDragOver = useCallback((event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -97,7 +94,7 @@ function XyflowDemo05Main() {
               onDrop={onDrop}
               onDragOver={onDragOver}
               fitView
-              style={{ backgroundColor: "#F7F9FB" }}
+              style={{ backgroundColor: '#F7F9FB' }}
             >
               <Controls />
               <Background />
@@ -114,5 +111,5 @@ export default function XyflowDemo05() {
     <DndLayout>
       <XyflowDemo05Main />
     </DndLayout>
-  )
+  );
 }

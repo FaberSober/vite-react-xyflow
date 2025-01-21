@@ -1,8 +1,7 @@
 import React from 'react';
-import './index.scss'
-import DndLayout from "./layout/dnd/DndLayout";
-import AiFlow from "./AiFlow";
-
+import './index.scss';
+import DndLayout from './layout/dnd/DndLayout';
+import AiFlow from './AiFlow';
 
 /**
  * @author xu.pengfei
@@ -13,5 +12,5 @@ export default function index() {
     <DndLayout>
       <AiFlow />
     </DndLayout>
-  )
+  );
 }

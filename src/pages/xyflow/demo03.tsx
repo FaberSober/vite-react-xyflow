@@ -29,13 +29,7 @@ export default function XyflowDemo02() {
       </div>
       <div className="fa-flex1 fa-relative">
         <div className="fa-absolute0">
-          <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
-            onConnect={onConnect}
-          >
+          <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} onEdgesChange={onEdgesChange} onConnect={onConnect}>
             <Controls />
             <MiniMap />
             <Background variant="dots" gap={12} size={1} />

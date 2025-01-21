@@ -1,12 +1,4 @@
-import {
-  Background,
-  BackgroundVariant,
-  Controls,
-  MiniMap,
-  type NodeMouseHandler,
-  ReactFlow,
-  useReactFlow,
-} from '@xyflow/react';
+import { Background, BackgroundVariant, Controls, MiniMap, type NodeMouseHandler, ReactFlow, useReactFlow } from '@xyflow/react';
 import React, { type KeyboardEventHandler, useCallback, useState } from 'react';
 
 import { Slide, type SlideData } from './cube/Slide';

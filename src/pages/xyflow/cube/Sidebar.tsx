@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { DnDContext } from "@/pages/xyflow/layout/dnd/context/DnDContext";
-import type { DnDType } from "@/pages/xyflow/layout/dnd/context/DnDContext";
+import { DnDContext } from '@/pages/xyflow/layout/dnd/context/DnDContext';
+import type { DnDType } from '@/pages/xyflow/layout/dnd/context/DnDContext';
 
 export default () => {
   const { setType } = useContext(DnDContext);

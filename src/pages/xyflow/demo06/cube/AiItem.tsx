@@ -1,8 +1,7 @@
 import React from 'react';
-import { Button, Tooltip } from "antd";
-import { CopyOutlined } from "@ant-design/icons";
-import { copyToClipboard } from "@/pages/xyflow/demo06/utils";
-
+import { Button, Tooltip } from 'antd';
+import { CopyOutlined } from '@ant-design/icons';
+import { copyToClipboard } from '@/pages/xyflow/demo06/utils';
 
 export interface AiItemProps {
   label: string;
@@ -14,9 +13,8 @@ export interface AiItemProps {
  * @date 2025/1/21 14:07
  */
 export default function AiItem({ label, value }: AiItemProps) {
-
   function handleClickCopy() {
-    copyToClipboard(`{{${label}.${value}}}`)
+    copyToClipboard(`{{${label}.${value}}}`);
   }
 
   return (
@@ -28,5 +26,5 @@ export default function AiItem({ label, value }: AiItemProps) {
         </Tooltip>
       </div>
     </div>
-  )
+  );
 }

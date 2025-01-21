@@ -1,9 +1,9 @@
 import { ReactNode, useCallback, useContext, useMemo, useRef } from 'react';
 import type React from 'react';
-import { addEdge, Background, Controls, type Edge, type Node, ReactFlow, useEdgesState, useNodesState, useReactFlow } from "@xyflow/react";
-import { DnDContext, DnDType } from "./layout/dnd/context/DnDContext";
-import Sidebar from "./cube/Sidebar";
-import { StartNode, AiChatNode } from "./node";
+import { addEdge, Background, Controls, type Edge, type Node, ReactFlow, useEdgesState, useNodesState, useReactFlow } from '@xyflow/react';
+import { DnDContext, DnDType } from './layout/dnd/context/DnDContext';
+import Sidebar from './cube/Sidebar';
+import { StartNode, AiChatNode } from './node';
 
 const initialNodes = [
   {
@@ -34,12 +34,9 @@ export default function AiFlow() {
   const { screenToFlowPosition } = useReactFlow();
   const { type } = useContext(DnDContext);
 
-  const onConnect = useCallback(
-    (params: Edge) => {
-      setEdges((eds: Edge[]) => addEdge(params, eds))
-    },
-    [],
-  );
+  const onConnect = useCallback((params: Edge) => {
+    setEdges((eds: Edge[]) => addEdge(params, eds));
+  }, []);
 
   const onDragOver = useCallback((event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -74,10 +71,13 @@ export default function AiFlow() {
     [screenToFlowPosition, type],
   );
 
-  const nodeTypes: Record<DnDType, () => React.JSX.Element> = useMemo(() => ({
-    start: StartNode,
-    'ai-chat-node': AiChatNode,
-  }), []);
+  const nodeTypes: Record<DnDType, () => React.JSX.Element> = useMemo(
+    () => ({
+      start: StartNode,
+      'ai-chat-node': AiChatNode,
+    }),
+    [],
+  );
 
   return (
     <div className="fa-full fa-flex-column">
@@ -105,7 +105,7 @@ export default function AiFlow() {
               onDrop={onDrop}
               onDragOver={onDragOver}
               fitView
-              style={{ backgroundColor: "#F7F9FB" }}
+              style={{ backgroundColor: '#F7F9FB' }}
             >
               <Controls />
               <Background />

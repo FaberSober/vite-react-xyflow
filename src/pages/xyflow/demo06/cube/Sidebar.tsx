@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { DnDContext } from "../layout/dnd/context/DnDContext";
-import type { DnDType } from "../layout/dnd/context/DnDContext";
+import { DnDContext } from '../layout/dnd/context/DnDContext';
+import type { DnDType } from '../layout/dnd/context/DnDContext';
 
 export default () => {
   const { setType } = useContext(DnDContext);

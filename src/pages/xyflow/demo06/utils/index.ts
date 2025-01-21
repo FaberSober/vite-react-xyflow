@@ -1,5 +1,5 @@
-import { message } from "antd";
-import { isNil, trim } from "lodash";
+import { message } from 'antd';
+import { isNil, trim } from 'lodash';
 
 /**
  * 复制文本到剪贴板
