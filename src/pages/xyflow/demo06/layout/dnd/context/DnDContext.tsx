@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export type DnDType = 'input' | 'default' | 'output'
+export type DnDType = 'Start' | 'default' | 'output'
 
 export interface DnDContextProps {
   type: DnDType|undefined;

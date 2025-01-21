@@ -45,6 +45,13 @@
   margin-top: 10px;
 }
 
+.fa-node-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #1f23291f;
+}
+
+
 /*@media screen and (min-width: 768px) {*/
 /*  .dndflow {*/
 /*    flex-direction: row;*/

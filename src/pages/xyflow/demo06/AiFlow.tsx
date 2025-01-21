@@ -1,14 +1,15 @@
-import { useCallback, useContext, useRef } from 'react';
+import { useCallback, useContext, useMemo, useRef } from 'react';
 import type React from 'react';
 import { addEdge, Background, Controls, type Edge, type Node, ReactFlow, useEdgesState, useNodesState, useReactFlow } from "@xyflow/react";
 import { DnDContext } from "./layout/dnd/context/DnDContext";
 import Sidebar from "./cube/Sidebar";
+import StartNode from "@/pages/xyflow/demo06/node/StartNode";
 
 const initialNodes = [
   {
     id: '1',
-    type: 'input',
-    data: { label: 'input node' },
+    type: 'start',
+    data: { label: '开始' },
     position: { x: 250, y: 5 },
   },
 ];
@@ -67,21 +68,20 @@ export default function AiFlow() {
     [screenToFlowPosition, type],
   );
 
+  const nodeTypes = useMemo(() => ({
+    start: StartNode,
+  }), []);
+
   return (
     <div className="fa-full fa-flex-column">
       <div className="fa-border-bottom fa-p12">
-        <a href="https://reactflow.dev/learn#creating-your-first-flow" target="_blank" rel="noreferrer">
-          https://reactflow.dev/learn#creating-your-first-flow
-        </a>
         <div>
-          <ul>
-            <li>🎨 You must import the React Flow stylesheet.</li>
-            <li>
-              📐 The <code>&lt;ReactFlow /&gt;</code> component must be wrapped in an element with a width and height.
-            </li>
-          </ul>
+          <ol>
+            <li>MaxKB is referenced.</li>
+          </ol>
         </div>
       </div>
+
       <div className="fa-flex1 fa-relative">
         <div className="fa-absolute0 flex dndflow">
           <div className="w-200px">
@@ -91,6 +91,7 @@ export default function AiFlow() {
             <ReactFlow
               nodes={nodes}
               edges={edges}
+              nodeTypes={nodeTypes}
               onNodesChange={onNodesChange}
               onEdgesChange={onEdgesChange}
               onConnect={onConnect}
