@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export type DnDType = 'Start' | 'default' | 'output'
+export type DnDType = 'start' | 'ai-chat-node'
 
 export interface DnDContextProps {
   type: DnDType|undefined;

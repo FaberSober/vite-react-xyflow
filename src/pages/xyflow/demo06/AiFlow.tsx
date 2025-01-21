@@ -1,16 +1,22 @@
-import { useCallback, useContext, useMemo, useRef } from 'react';
+import { ReactNode, useCallback, useContext, useMemo, useRef } from 'react';
 import type React from 'react';
 import { addEdge, Background, Controls, type Edge, type Node, ReactFlow, useEdgesState, useNodesState, useReactFlow } from "@xyflow/react";
-import { DnDContext } from "./layout/dnd/context/DnDContext";
+import { DnDContext, DnDType } from "./layout/dnd/context/DnDContext";
 import Sidebar from "./cube/Sidebar";
-import StartNode from "@/pages/xyflow/demo06/node/StartNode";
+import { StartNode, AiChatNode } from "./node";
 
 const initialNodes = [
   {
     id: '1',
     type: 'start',
     data: { label: '开始' },
-    position: { x: 250, y: 5 },
+    position: { x: 0, y: 0 },
+  },
+  {
+    id: '2',
+    type: 'ai-chat-node',
+    data: { label: 'AI 对话' },
+    position: { x: 300, y: 0 },
   },
 ];
 
@@ -68,8 +74,9 @@ export default function AiFlow() {
     [screenToFlowPosition, type],
   );
 
-  const nodeTypes = useMemo(() => ({
+  const nodeTypes: Record<DnDType, () => React.JSX.Element> = useMemo(() => ({
     start: StartNode,
+    'ai-chat-node': AiChatNode,
   }), []);
 
   return (

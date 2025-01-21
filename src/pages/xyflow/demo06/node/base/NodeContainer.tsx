@@ -8,6 +8,8 @@ export interface NodeContainerProps {
   color?: string;
   className?: string;
   style?: CSSProperties;
+  bodyClassName?: string;
+  bodyStyle?: CSSProperties;
   children?: React.ReactNode;
 }
 
@@ -15,7 +17,7 @@ export interface NodeContainerProps {
  * @author xu.pengfei
  * @date 2025/1/21 11:06
  */
-export default function NodeContainer({title, icon, color, className, style, children}: NodeContainerProps) {
+export default function NodeContainer({title, icon, color, className, style, bodyClassName, bodyStyle, children}: NodeContainerProps) {
   const [open, setOpen] = useState(true)
 
   return (
@@ -34,7 +36,7 @@ export default function NodeContainer({title, icon, color, className, style, chi
         </div>
       </div>
       {open && (
-        <div className="fa-mt12">
+        <div className={`fa-mt12 ${bodyClassName}`} style={bodyStyle}>
           {children}
         </div>
       )}

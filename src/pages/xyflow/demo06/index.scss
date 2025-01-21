@@ -52,9 +52,20 @@
 }
 
 .fa-ai-node-label {
-  border-left: 2px var(--primary-color) solid;
   padding-left: 12px;
   margin-bottom: 8px;
+  position: relative;
+}
+
+.fa-ai-node-label:before {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 80%;
+  content: "";
+  background: var(--primary-color);
 }
 
 .fa-ai-node-item {
