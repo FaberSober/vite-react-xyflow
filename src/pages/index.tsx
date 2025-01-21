@@ -44,6 +44,7 @@ export default function App() {
             <Link to="/xyflow/demo03">xyflow/demo03</Link>
             <Link to="/xyflow/demo04">xyflow/demo04</Link>
             <Link to="/xyflow/demo05">xyflow/demo05</Link>
+            <Link to="/xyflow/demo06">xyflow/demo06</Link>
           </div>
 
           <div className="fa-flex-column">
