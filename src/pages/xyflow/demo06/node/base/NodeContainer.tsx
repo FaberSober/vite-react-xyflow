@@ -20,7 +20,7 @@ export default function NodeContainer({title, icon, color, className, style, chi
 
   return (
     <div className="fa-node-card p-12px" style={{ minWidth: 245, ...style }}>
-      <div className="fa-flex-row fa-flex-row-center fa-mb12">
+      <div className="fa-flex-row fa-flex-row-center">
         {icon && (
           <div className="fa-flex-row fa-flex-center fa-radius fa-mr4" style={{background: color || '#F00' }}>
             <img src={`/file/image/svg/ai/${icon}.svg`} alt={title} style={{ width: 20, height: 20 }} />
@@ -34,7 +34,7 @@ export default function NodeContainer({title, icon, color, className, style, chi
         </div>
       </div>
       {open && (
-        <div>
+        <div className="fa-mt12">
           {children}
         </div>
       )}

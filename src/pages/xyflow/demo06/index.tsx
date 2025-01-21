@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css'
+import './index.scss'
 import DndLayout from "./layout/dnd/DndLayout";
 import AiFlow from "./AiFlow";
 

@@ -38,7 +38,8 @@
       "style": {
         "noNonNullAssertion": "off",
         "noUnusedTemplateLiteral": "off",
-        "useTemplate": "off"
+        "useTemplate": "off",
+        "useImportType": "off"
       },
       "suspicious": {
         "noExplicitAny": "off",

@@ -53,8 +53,39 @@
 
 .fa-ai-node-label {
   border-left: 2px var(--primary-color) solid;
-  padding-left: 4px;
+  padding-left: 12px;
+  margin-bottom: 8px;
 }
+
+.fa-ai-node-item {
+  padding: 8px 12px;
+  background: #f5f6f7;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 14px;
+
+  .fa-ai-node-item-btn {
+    display: none;
+    position: absolute;
+    right: 4px;
+  }
+}
+
+.fa-ai-node-item:hover {
+  .fa-ai-node-item-btn {
+    display: block;
+  }
+}
+
+.fa-node-card {
+  .fa-ai-node-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
 
 /*@media screen and (min-width: 768px) {*/
 /*  .dndflow {*/
