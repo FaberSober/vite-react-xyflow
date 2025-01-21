@@ -1,5 +1,5 @@
 import { useCallback, useContext, useRef } from 'react';
-import { addEdge, Background, Controls, ReactFlow, useEdgesState, useNodesState, useReactFlow } from '@xyflow/react';
+import { addEdge, Background, Connection, Controls, ReactFlow, useEdgesState, useNodesState, useReactFlow } from '@xyflow/react';
 import type { Node, Edge } from '@xyflow/react';
 
 import '@xyflow/react/dist/style.css';
@@ -27,7 +27,7 @@ function XyflowDemo05Main() {
   const { screenToFlowPosition } = useReactFlow();
   const { type } = useContext(DnDContext);
 
-  const onConnect = useCallback((params: Edge) => {
+  const onConnect = useCallback((params: Connection) => {
     setEdges((eds: Edge[]) => addEdge(params, eds));
   }, []);
 

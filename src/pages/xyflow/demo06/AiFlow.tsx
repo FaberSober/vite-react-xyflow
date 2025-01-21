@@ -1,6 +1,18 @@
-import { ReactNode, useCallback, useContext, useMemo, useRef } from 'react';
+import { ComponentType, ReactNode, useCallback, useContext, useMemo, useRef } from 'react';
 import type React from 'react';
-import { addEdge, Background, Controls, type Edge, type Node, ReactFlow, useEdgesState, useNodesState, useReactFlow } from '@xyflow/react';
+import {
+  addEdge,
+  Background,
+  Connection,
+  Controls,
+  type Edge,
+  type Node,
+  NodeProps,
+  ReactFlow,
+  useEdgesState,
+  useNodesState,
+  useReactFlow,
+} from '@xyflow/react';
 import { DnDContext, DnDType } from './layout/dnd/context/DnDContext';
 import Sidebar from './cube/Sidebar';
 import { StartNode, AiChatNode } from './node';
@@ -34,7 +46,8 @@ export default function AiFlow() {
   const { screenToFlowPosition } = useReactFlow();
   const { type } = useContext(DnDContext);
 
-  const onConnect = useCallback((params: Edge) => {
+  const onConnect = useCallback((params: Connection) => {
+    console.log('onConnect', params);
     setEdges((eds: Edge[]) => addEdge(params, eds));
   }, []);
 
@@ -71,7 +84,15 @@ export default function AiFlow() {
     [screenToFlowPosition, type],
   );
 
-  const nodeTypes: Record<DnDType, () => React.JSX.Element> = useMemo(
+  const nodeTypes: Record<
+    DnDType,
+    ComponentType<
+      NodeProps & {
+        data: any;
+        type: any;
+      }
+    >
+  > = useMemo(
     () => ({
       start: StartNode,
       'ai-chat-node': AiChatNode,
