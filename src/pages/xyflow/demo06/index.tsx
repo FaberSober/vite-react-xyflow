@@ -2,6 +2,7 @@ import React from 'react';
 import './index.scss';
 import DndLayout from './layout/dnd/DndLayout';
 import AiFlow from './AiFlow';
+import { ConfigProvider } from 'antd';
 
 /**
  * @author xu.pengfei
@@ -9,8 +10,10 @@ import AiFlow from './AiFlow';
  */
 export default function index() {
   return (
-    <DndLayout>
-      <AiFlow />
-    </DndLayout>
+    <ConfigProvider getPopupContainer={(triggerNode) => triggerNode?.parentNode as HTMLElement}>
+      <DndLayout>
+        <AiFlow />
+      </DndLayout>
+    </ConfigProvider>
   );
 }

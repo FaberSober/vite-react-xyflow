@@ -100,6 +100,7 @@
   align-items: center;
   position: relative;
   font-size: 14px;
+  border-radius: 4px;
 
   .fa-ai-node-item-btn {
     display: none;
@@ -120,6 +121,21 @@
   }
 }
 
+.fa-ai-node-item-inner-card {
+  padding: 12px;
+  background: #f5f6f7;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+
+  .ant-form-item {
+    margin-bottom: 12px;
+  }
+}
+
+.nodrag {
+  cursor: default;
+}
 
 
 /*@media screen and (min-width: 768px) {*/

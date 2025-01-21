@@ -35,6 +35,11 @@ const initialNodes = [
 let id = 0;
 const getId = () => `dndnode_${id++}`;
 
+const nodeTypes: Record<DnDType, any> = {
+  start: StartNode,
+  'ai-chat-node': AiChatNode,
+};
+
 /**
  * @author xu.pengfei
  * @date 2025/1/21 10:41
@@ -82,22 +87,6 @@ export default function AiFlow() {
       setNodes((nds) => nds.concat(newNode));
     },
     [screenToFlowPosition, type],
-  );
-
-  const nodeTypes: Record<
-    DnDType,
-    ComponentType<
-      NodeProps & {
-        data: any;
-        type: any;
-      }
-    >
-  > = useMemo(
-    () => ({
-      start: StartNode,
-      'ai-chat-node': AiChatNode,
-    }),
-    [],
   );
 
   return (
