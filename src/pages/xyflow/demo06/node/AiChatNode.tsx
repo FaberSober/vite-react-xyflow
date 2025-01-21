@@ -1,6 +1,7 @@
 import React from 'react';
 import NodeContainer from './base/NodeContainer';
 import { AiLabel } from "@/pages/xyflow/demo06/cube";
+import { Handle, Position } from "@xyflow/react";
 
 /**
  * @author xu.pengfei
@@ -15,6 +16,8 @@ export default function AiChatNode() {
       <AiLabel title="全局变量" />
 
       <AiLabel title="参数输出" />
+
+      <Handle type="target" position={Position.Left} />
     </NodeContainer>
   )
 }
