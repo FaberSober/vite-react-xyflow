@@ -45,16 +45,34 @@
   margin-top: 10px;
 }
 
+.fa-node-card-container {
+  //padding: 12px;
+}
+
+.fa-node-card-container:hover {
+  //.react-flow__handle {
+  //  display: block;
+  //}
+}
+
 .fa-node-card {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px #1f23291f;
   border: 2px solid #FFF;
   cursor: pointer;
+
+  //.react-flow__handle {
+  //  display: none;
+  //}
 }
 
 .fa-node-card-sel {
   border: 2px solid var(--primary-color);
+
+  //.react-flow__handle {
+  //  display: block;
+  //}
 }
 
 .fa-ai-node-label {

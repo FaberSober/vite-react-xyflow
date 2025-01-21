@@ -10,10 +10,9 @@ export type StartNodeProps = Node<{}, 'start'>;
  * @author xu.pengfei
  * @date 2025/1/21 10:56
  */
-export default function StartNode(props: NodeProps<StartNodeProps>) {
-  console.log('StartNode', props);
+export default function StartNode({ selected }: NodeProps<StartNodeProps>) {
   return (
-    <NodeContainer title="开始" icon="icon_start" selected={props.selected}>
+    <NodeContainer title="开始" icon="icon_start" selected={selected}>
       <AiLabel title="全局变量" />
       <AiItem label="当前时间" value="time" />
       <AiItem label="历史聊天记录" value="history_context" />
