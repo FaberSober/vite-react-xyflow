@@ -13,7 +13,7 @@ export type StartNodeProps = Node<{}, 'start'>;
 export default function StartNode(props: NodeProps<StartNodeProps>) {
   console.log('StartNode', props);
   return (
-    <NodeContainer title="开始" icon="icon_start">
+    <NodeContainer title="开始" icon="icon_start" selected={props.selected}>
       <AiLabel title="全局变量" />
       <AiItem label="当前时间" value="time" />
       <AiItem label="历史聊天记录" value="history_context" />

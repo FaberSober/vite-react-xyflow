@@ -1,10 +1,12 @@
 import React, { CSSProperties, useState } from 'react';
 import { CaretDownOutlined, CaretLeftOutlined } from '@ant-design/icons';
+import clsx from 'clsx';
 
 export interface NodeContainerProps {
   title: string;
   icon?: string;
   color?: string;
+  selected?: boolean;
   className?: string;
   style?: CSSProperties;
   bodyClassName?: string;
@@ -16,11 +18,11 @@ export interface NodeContainerProps {
  * @author xu.pengfei
  * @date 2025/1/21 11:06
  */
-export default function NodeContainer({ title, icon, color, className, style, bodyClassName, bodyStyle, children }: NodeContainerProps) {
+export default function NodeContainer({ title, icon, color, selected, className, style, bodyClassName, bodyStyle, children }: NodeContainerProps) {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="fa-node-card p-12px" style={{ minWidth: 245, ...style }}>
+    <div className={clsx('fa-node-card', 'p-12px', selected && 'fa-node-card-sel')} style={{ minWidth: 245, ...style }}>
       <div className="fa-flex-row fa-flex-row-center">
         {icon && (
           <div className="fa-flex-row fa-flex-center fa-radius fa-mr4" style={{ background: color || '#F00' }}>

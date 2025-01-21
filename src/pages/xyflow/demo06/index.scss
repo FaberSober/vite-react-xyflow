@@ -49,6 +49,12 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px #1f23291f;
+  border: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.fa-node-card-sel {
+  border: 2px solid var(--primary-color);
 }
 
 .fa-ai-node-label {
