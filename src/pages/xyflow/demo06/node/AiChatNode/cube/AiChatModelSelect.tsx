@@ -1,5 +1,7 @@
 import React from 'react';
-import { Select, SelectProps } from 'antd';
+import { Button, Select, SelectProps } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
+import AiChatLlmAddModal from '../modal/AiChatLlmAddModal';
 
 export interface AiChatModelSelectProps extends SelectProps {}
 
@@ -30,6 +32,21 @@ export default function AiChatModelSelect({ ...props }: AiChatModelSelectProps) 
           ],
         },
       ]}
+      dropdownRender={(menu) => {
+        return (
+          <div>
+            {menu}
+            <div style={{ marginTop: 4 }}>
+              <AiChatLlmAddModal>
+                <Button icon={<PlusOutlined />} type="text" block>
+                  添加模型
+                </Button>
+              </AiChatLlmAddModal>
+            </div>
+          </div>
+        );
+      }}
+      // open
       placeholder="请选择AI模型"
       allowClear
       {...props}
