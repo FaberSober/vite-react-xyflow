@@ -1,5 +1,6 @@
 import React from 'react';
 import NodeContainer from "./base/NodeContainer";
+import AiLabel from "@/pages/xyflow/demo06/cube/AiLabel";
 
 /**
  * AI workflow Start Node
@@ -14,12 +15,10 @@ export default function StartNode() {
       icon="icon_start"
     >
       <div>
-        <div>Start</div>
-        <div>Start</div>
-        <div>Start</div>
-        <div>Start</div>
-        <div>Start</div>
-        <div>Start</div>
+        <AiLabel title="全局变量" />
+        <div>
+          当前时间{'{time}'}
+        </div>
       </div>
     </NodeContainer>
   )

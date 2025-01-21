@@ -51,6 +51,10 @@
   box-shadow: 0 2px 4px #1f23291f;
 }
 
+.fa-ai-node-label {
+  border-left: 2px var(--primary-color) solid;
+  padding-left: 4px;
+}
 
 /*@media screen and (min-width: 768px) {*/
 /*  .dndflow {*/
