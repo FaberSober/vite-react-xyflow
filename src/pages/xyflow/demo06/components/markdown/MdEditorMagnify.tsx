@@ -24,7 +24,7 @@ export default function MdEditorMagnify({ title, value, onChange }: MdEditorMagn
         value={value}
         onChange={onChange}
         preview={false}
-        placeholder="请输入markdown内容"
+        // placeholder="请输入markdown内容"
         toolbars={[]}
         footers={[]}
         style={{height: 100}}

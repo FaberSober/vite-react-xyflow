@@ -79,6 +79,8 @@
   padding-left: 12px;
   margin-bottom: 8px;
   position: relative;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .fa-ai-node-label:before {
@@ -130,6 +132,13 @@
 
   .ant-form-item {
     margin-bottom: 12px;
+  }
+}
+
+.fa-ai-node-item-form-item-horizontal-right {
+  .ant-form-item-control-input-content {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
