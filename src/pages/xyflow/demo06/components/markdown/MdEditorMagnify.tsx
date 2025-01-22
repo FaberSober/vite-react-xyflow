@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FaMdEditor from "@/pages/xyflow/demo06/components/markdown/FaMdEditor";
 import { Button, Modal } from "antd";
 import { FullscreenOutlined } from "@ant-design/icons";
+import './index.scss'
 
 
 export interface MdEditorMagnifyProps {
@@ -18,7 +19,7 @@ export default function MdEditorMagnify({ title, value, onChange }: MdEditorMagn
   const [open, setOpen] = useState(false);
 
   return (
-    <div style={{ width: '300px', height: '100px', position: 'relative' }}>
+    <div className="fa-md-editor-magnify-main" style={{ width: '100%', height: '100px', position: 'relative' }}>
       <FaMdEditor
         value={value}
         onChange={onChange}
@@ -28,7 +29,7 @@ export default function MdEditorMagnify({ title, value, onChange }: MdEditorMagn
         footers={[]}
         style={{height: 100}}
       />
-      <div style={{ position: 'absolute', right: 4, bottom: 4 }}>
+      <div className="fa-md-editor-magnify-btn-div" style={{ position: 'absolute', right: 4, bottom: 4 }}>
         <Button onClick={() => setOpen(true)} icon={<FullscreenOutlined />} type='text' />
       </div>
 

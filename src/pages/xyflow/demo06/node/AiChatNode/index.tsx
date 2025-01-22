@@ -26,6 +26,9 @@ export default function AiChatNode({ selected }: AiChatNodeProps) {
           <Form.Item name="system" label="角色设定">
             <MdEditorMagnify />
           </Form.Item>
+          <Form.Item name="prompt" label="提示词" rules={[{ required: true, message: '请输入提示词' }]}>
+            <MdEditorMagnify />
+          </Form.Item>
 
           <Button htmlType="submit">submit</Button>
         </Form>

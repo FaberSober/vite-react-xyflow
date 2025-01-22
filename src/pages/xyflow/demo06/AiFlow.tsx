@@ -114,7 +114,7 @@ export default function AiFlow() {
               onConnect={onConnect}
               onDrop={onDrop}
               onDragOver={onDragOver}
-              fitView
+              // fitView
               style={{ backgroundColor: '#F7F9FB' }}
             >
               <Controls />
