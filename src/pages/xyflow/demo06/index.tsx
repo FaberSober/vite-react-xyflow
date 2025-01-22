@@ -3,6 +3,8 @@ import './index.scss';
 import DndLayout from './layout/dnd/DndLayout';
 import AiFlow from './AiFlow';
 import { ConfigProvider } from 'antd';
+import zhCN from 'antd/es/locale/zh_CN';
+
 
 /**
  * @author xu.pengfei
@@ -10,7 +12,7 @@ import { ConfigProvider } from 'antd';
  */
 export default function index() {
   return (
-    <ConfigProvider getPopupContainer={(triggerNode) => triggerNode?.parentNode as HTMLElement}>
+    <ConfigProvider locale={zhCN} getPopupContainer={(triggerNode) => triggerNode?.parentNode as HTMLElement}>
       <DndLayout>
         <AiFlow />
       </DndLayout>

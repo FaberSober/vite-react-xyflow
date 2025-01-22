@@ -19,6 +19,7 @@
     "clsx": "^2.1.1",
     "dayjs": "1.11.13",
     "lodash": "^4.17.21",
+    "md-editor-rt": "^5.2.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-remark": "^2.1.0",
