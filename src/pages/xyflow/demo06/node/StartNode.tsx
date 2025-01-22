@@ -12,7 +12,7 @@ export type StartNodeProps = Node<{}, 'start'>;
  */
 export default function StartNode({ selected }: NodeProps<StartNodeProps>) {
   return (
-    <NodeContainer title="开始" icon="icon_start" selected={selected}>
+    <NodeContainer title="开始" icon="icon_start" selected={selected} handle={(<Handle type="source" position={Position.Right} id="a" />)}>
       <AiLabel title="全局变量" />
       <AiItem label="当前时间" value="time" />
       <AiItem label="历史聊天记录" value="history_context" />
@@ -20,8 +20,6 @@ export default function StartNode({ selected }: NodeProps<StartNodeProps>) {
 
       <AiLabel title="参数输出" />
       <AiItem label="开始" value="question" />
-
-      <Handle type="source" position={Position.Right} id="a" />
     </NodeContainer>
   );
 }

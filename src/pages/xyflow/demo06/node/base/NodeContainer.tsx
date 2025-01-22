@@ -7,18 +7,20 @@ export interface NodeContainerProps {
   icon?: string;
   color?: string;
   selected?: boolean;
+  showToggle?: boolean;
   className?: string;
   style?: CSSProperties;
   bodyClassName?: string;
   bodyStyle?: CSSProperties;
   children?: React.ReactNode;
+  handle?: React.ReactNode;
 }
 
 /**
  * @author xu.pengfei
  * @date 2025/1/21 11:06
  */
-export default function NodeContainer({ title, icon, color, selected, className, style, bodyClassName, bodyStyle, children }: NodeContainerProps) {
+export default function NodeContainer({ title, icon, color, selected, showToggle = true, className, style, bodyClassName, bodyStyle, children, handle }: NodeContainerProps) {
   const [open, setOpen] = useState(true);
 
   return (
@@ -31,9 +33,11 @@ export default function NodeContainer({ title, icon, color, selected, className,
         )}
         <div className="fa-h3 fa-flex-1">{title}</div>
         <div>
-          <div onClick={() => setOpen(!open)} className="fa-link-btn fa-flex-row fa-flex-center" style={{ width: 20, height: 20 }}>
-            {open ? <CaretDownOutlined /> : <CaretLeftOutlined />}
-          </div>
+          {showToggle && (
+            <div onClick={() => setOpen(!open)} className="fa-link-btn fa-flex-row fa-flex-center" style={{width: 20, height: 20}}>
+              {open ? <CaretDownOutlined/> : <CaretLeftOutlined/>}
+            </div>
+          )}
         </div>
       </div>
       {open && (
@@ -41,6 +45,7 @@ export default function NodeContainer({ title, icon, color, selected, className,
           {children}
         </div>
       )}
+      {handle}
     </div>
   );
 }

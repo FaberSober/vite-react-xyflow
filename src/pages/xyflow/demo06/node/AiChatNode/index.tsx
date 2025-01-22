@@ -17,7 +17,12 @@ export default function AiChatNode({ selected }: AiChatNodeProps) {
   const [form] = Form.useForm();
 
   return (
-    <NodeContainer title="AI对话" icon="icon_robot" selected={selected}>
+    <NodeContainer title="AI对话" icon="icon_robot" selected={selected} handle={(
+      <>
+        <Handle type="source" position={Position.Right} />
+        <Handle type="target" position={Position.Left} />
+      </>
+    )}>
       <AiLabel title="节点设置" />
       <div className="fa-ai-node-item-inner-card nodrag nopan nowheel">
         <Form form={form} layout="vertical" onFinish={(v) => console.log('finish', v)}>
@@ -67,9 +72,6 @@ export default function AiChatNode({ selected }: AiChatNodeProps) {
 
       <AiLabel title="参数输出" />
       <AiItem label="AI 回答内容" value="answer" />
-
-      <Handle type="source" position={Position.Right} />
-      <Handle type="target" position={Position.Left} />
     </NodeContainer>
   );
 }
